@@ -12,6 +12,7 @@ ORDERED_OBJS += \
 "./ccfg.obj" \
 "./project_main.obj" \
 "./sensors/bmp280.obj" \
+"./sensors/buzzer.obj" \
 "./sensors/hdc1000.obj" \
 "./sensors/mpu9250.obj" \
 "./sensors/opt3001.obj" \
@@ -162,8 +163,8 @@ empty_CC2650STK_TI.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CC2650STK.obj" "ccfg.obj" "project_main.obj" "sensors/bmp280.obj" "sensors/hdc1000.obj" "sensors/mpu9250.obj" "sensors/opt3001.obj" "sensors/tmp007.obj" 
-	-$(RM) "CC2650STK.d" "ccfg.d" "project_main.d" "sensors/bmp280.d" "sensors/hdc1000.d" "sensors/mpu9250.d" "sensors/opt3001.d" "sensors/tmp007.d" 
+	-$(RM) "CC2650STK.obj" "ccfg.obj" "project_main.obj" "sensors/bmp280.obj" "sensors/buzzer.obj" "sensors/hdc1000.obj" "sensors/mpu9250.obj" "sensors/opt3001.obj" "sensors/tmp007.obj" 
+	-$(RM) "CC2650STK.d" "ccfg.d" "project_main.d" "sensors/bmp280.d" "sensors/buzzer.d" "sensors/hdc1000.d" "sensors/mpu9250.d" "sensors/opt3001.d" "sensors/tmp007.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

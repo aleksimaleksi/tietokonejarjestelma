@@ -18,21 +18,6 @@
 
 void opt3001_setup(I2C_Handle *i2c);
 double opt3001_get_data(I2C_Handle *i2c);
-/*
-int sum (int *x, int *y);
-int x = 8;
-int y = 9;
-int value = sum (&x‚&y);
-
-
-
-double get_data (I2C_Handle * i2c);
-I2C_Handle i2c = struct {x,  y, z};
-
-
-double data = get_data(&i2c);
-
-*/
-
+float valoisuus(uint16_t rekisteri);
 
 #endif /* OPT3001_H_ */

@@ -66,7 +66,6 @@ uint16_t opt3001_get_status(I2C_Handle *i2c) {
 
 /**************** JTKJ: DO NOT MODIFY ANYTHING ABOVE THIS LINE ****************/
 
-float valoisuus(uint16_t rekisteri);
 float valoisuus(uint16_t rekisteri) {
 
     uint16_t Rmaski = 0b0000111111111111;
@@ -85,15 +84,16 @@ double opt3001_get_data(I2C_Handle *i2c) {
 
 	double lux = -1.0; // return value of the function
     // JTKJ: Find out the correct buffer sizes (n) with this sensor?
-    uint8_t txBuffer[ 1 ];
-    uint8_t rxBuffer[ 2 ];
+	 uint8_t txBuffer[ 1 ];
+	 uint8_t rxBuffer[ 2 ];
 
 	// JTKJ: Fill in the i2cMessage data structure with correct values
     //       as shown in the lecture material
     I2C_Transaction i2cMessage;
-    txBuffer[0] = OPT3001_REG_RESULT;
+
 
     i2cMessage.slaveAddress = Board_OPT3001_ADDR;
+    txBuffer[0] = OPT3001_REG_RESULT;
     i2cMessage.writeBuf = txBuffer; // Lähetyspuskurin asetus
     i2cMessage.writeCount = 1;      // Lähetetään 1 tavu
     i2cMessage.readBuf = rxBuffer;  // Vastaanottopuskurin asetus
@@ -104,8 +104,7 @@ double opt3001_get_data(I2C_Handle *i2c) {
 		if (I2C_transfer(*i2c, &i2cMessage)) {
 
 	        // JTKJ: Here the conversion from register value to lux
-		    return valoisuus(rxBuffer);
-
+		    lux = valoisuus((uint16_t)(rxBuffer[0]<<8 | rxBuffer[1]));
 		} else {
 
 			System_printf("OPT3001: Data read failed!\n");

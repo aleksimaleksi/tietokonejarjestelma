@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../sensors/bmp280.c \
+../sensors/buzzer.c \
 ../sensors/hdc1000.c \
 ../sensors/mpu9250.c \
 ../sensors/opt3001.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./sensors/bmp280.d \
+./sensors/buzzer.d \
 ./sensors/hdc1000.d \
 ./sensors/mpu9250.d \
 ./sensors/opt3001.d \
@@ -19,6 +21,7 @@ C_DEPS += \
 
 OBJS += \
 ./sensors/bmp280.obj \
+./sensors/buzzer.obj \
 ./sensors/hdc1000.obj \
 ./sensors/mpu9250.obj \
 ./sensors/opt3001.obj \
@@ -26,6 +29,7 @@ OBJS += \
 
 OBJS__QUOTED += \
 "sensors/bmp280.obj" \
+"sensors/buzzer.obj" \
 "sensors/hdc1000.obj" \
 "sensors/mpu9250.obj" \
 "sensors/opt3001.obj" \
@@ -33,6 +37,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "sensors/bmp280.d" \
+"sensors/buzzer.d" \
 "sensors/hdc1000.d" \
 "sensors/mpu9250.d" \
 "sensors/opt3001.d" \
@@ -40,6 +45,7 @@ C_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../sensors/bmp280.c" \
+"../sensors/buzzer.c" \
 "../sensors/hdc1000.c" \
 "../sensors/mpu9250.c" \
 "../sensors/opt3001.c" \

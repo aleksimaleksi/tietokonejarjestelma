@@ -17,4 +17,5 @@
 void mpu9250_setup(I2C_Handle *i2c);
 void mpu9250_get_data(I2C_Handle *i2c, float *ax, float *ay, float *az, float *gx, float *gy, float *gz);
 
+
 #endif /* MPU9250_H_ */
